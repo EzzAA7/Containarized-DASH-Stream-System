@@ -1,0 +1,15 @@
+
+
+
+touch Dockerfile
+FROM php:7.0-apache
+COPY src/ /var/www/html
+EXPOSE 80
+
+docker run -p 7014:80 -v /home/s1160730/php/src:/var/www/html tstprj
+docker run -p 7014:80 -v /home/s1160730/proj/try:/var/www/html runprj
+
+docker build -t tstprj .
+docker build -t runprj .
+
+MP4Box -dash 2000 -rap -frag-rap -profile live o920.mp4 o720.mp4 o520.mp4 o520q30.mp4 o520q50.mp4 aud.mp4
